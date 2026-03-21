@@ -368,7 +368,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4059277459806088897, guid: df6affe78b1e8494ba4fc1b618bdd53c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1886622284}
   m_SourcePrefab: {fileID: 100100000, guid: df6affe78b1e8494ba4fc1b618bdd53c, type: 3}
 --- !u!1 &619394800
 GameObject:
@@ -454,10 +457,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &878660457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7236067080365894233, guid: 24f7f4890a41d30449c250d950b5327e, type: 3}
+  m_PrefabInstance: {fileID: 3031193326391609594}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &878660458 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8472411921942566673, guid: 24f7f4890a41d30449c250d950b5327e, type: 3}
   m_PrefabInstance: {fileID: 3031193326391609594}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &878660461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878660457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab7ec4d1ce7e3240ad57de7a64e19ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleController
+  autoDestroy: 1
+  destroyDelay: 0.5
+--- !u!1 &1886622280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4059277459806088897, guid: df6affe78b1e8494ba4fc1b618bdd53c, type: 3}
+  m_PrefabInstance: {fileID: 590974059}
   m_PrefabAsset: {fileID: 0}
 --- !u!198 &1886622281 stripped
 ParticleSystem:
@@ -469,6 +496,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6632245815709576836, guid: df6affe78b1e8494ba4fc1b618bdd53c, type: 3}
   m_PrefabInstance: {fileID: 590974059}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1886622284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886622280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab7ec4d1ce7e3240ad57de7a64e19ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleController
+  autoDestroy: 1
+  destroyDelay: 0.5
 --- !u!1001 &3031193326391609594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -548,7 +589,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7236067080365894233, guid: 24f7f4890a41d30449c250d950b5327e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 878660461}
   m_SourcePrefab: {fileID: 100100000, guid: 24f7f4890a41d30449c250d950b5327e, type: 3}
 --- !u!1001 &5079458130490455886
 PrefabInstance:
