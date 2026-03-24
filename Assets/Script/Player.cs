@@ -30,6 +30,20 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        // Ensure particles don't play on load. They should only play when moving or on explosion.
+        if (moveParticles != null)
+        {
+            moveParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        }
+
+        if (explosionParticles != null)
+        {
+            explosionParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        }
+    }
+
     void FixedUpdate()
     {
         if (moveAction == null)
@@ -68,15 +82,28 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            // Play explosion particles
-            if (explosionParticles != null)
-            {
-                explosionParticles.transform.position = transform.position; // Position explosion at player
-                explosionParticles.Play();
-            }
-
+            
             // Destroy the player object
             Destroy(gameObject);
+
+             if (explosionParticles != null)
+            {
+                ParticleSystem explosionClone = Instantiate(explosionParticles, transform.position, Quaternion.identity);
+                explosionClone.Play();
+
+                // Try to compute an appropriate lifetime for automatic destruction of the clone.
+                var main = explosionClone.main;
+                float lifetime = main.duration;
+                // Add startLifetime (use constantMax to be safe with MinMaxCurve)
+                lifetime += main.startLifetime.constantMax;
+                Destroy(explosionClone.gameObject, lifetime + 0.1f);
+            }
+
+            // Stop movement particles immediately so they don't continue emitting.
+            if (moveParticles != null && moveParticles.isPlaying)
+            {
+                moveParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            }
         }
     }
 
